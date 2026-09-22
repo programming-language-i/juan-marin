@@ -3,7 +3,7 @@ import time
 
 def tarea ():
     for i in range (5):
-        print("hello")
+        print(f"{i+1} 30")
         time.sleep(1)
 
 
