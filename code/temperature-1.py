@@ -79,7 +79,7 @@ def sensor5():
     print("    ")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     sensor1()
     sensor2()
     sensor3()
