@@ -1,0 +1,29 @@
+import threading, time
+
+
+def sensor(numero, temperatura):
+    print(f"{numero} sensor empieza")
+
+    for i in range(5):
+        print(f"{numero} - {i+1}: temperatura {temperatura} °C")
+
+        time.sleep(1)
+
+    print("termino")
+
+if __name__ == "__main__":  
+    threads = [
+      threading.Thread(target=sensor, args=("sensor1",20)),
+      threading.Thread(target=sensor, args=("sensor2",30)),
+      threading.Thread(target=sensor, args=("sensor3",40)),
+      threading.Thread(target=sensor, args=("sensor4",50)),
+      threading.Thread(target=sensor, args=("sensor5",60)),
+    ]
+
+    for thread in threads:
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+    print("Todos los sensores han terminado de medir la temperatura")
