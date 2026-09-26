@@ -248,12 +248,29 @@ with ProcessPoolExecutor(max_workers=2) as pool:
 
 Para cada programa, elegir **hilos** o **procesos** y justificar en una línea *(¿espera o calcula?)*.
 
-1. Consultar el precio de 30 productos en 30 APIs distintas.
+1. Consultar el precio de 30 productos en 30 APIs distintas. 
+
+- Hilos: El programa pasa casi todo el tiempo esperando respuestas externa, no calculando.
+
 2. Contar las palabras palíndromas de 10 libros ya cargados en memoria.
+
+- Procesos: Todo el trabajo es revisar texto y comparar palabras o sea puro calculo con datos ya disponibles.
+
 3. Un servidor de chat que atiende 15 clientes conectados.
+
+- Hilos: Cada cliente pasa mucho tiempo esperando a que escriba algo, así que el servidor solo espera y reacciona.
+
 4. Aplicar un filtro de desenfoque a 200 fotos, píxel por píxel, en Python puro.
+
+- Procesos: Es un trabajo pesado de calculo imagen por imagen y Python puro no aprovecha bien varios hilos para calcular.
+
 5. Leer 50 archivos de log del disco y copiarlos a otra carpeta.
+
+- Hilos: La mayor parte del tiempo se pasa esperando al disco, no calculando.
+
 6. Simular 1.000.000 de lanzamientos de dados en 8 lotes y promediar.
+
+- Procesos: Son muchísimos calculos matematicos repetidos, y conviene repartirlos entre varios núcleos del procesador.
 
 ---
 
