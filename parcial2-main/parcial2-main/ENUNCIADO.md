@@ -1,4 +1,4 @@
-# Segundo Parcial · Enunciado
+# Segundo talles · Enunciado
 
 Lenguaje de Programación I
 
