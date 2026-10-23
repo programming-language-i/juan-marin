@@ -6,7 +6,6 @@ import time
 
 from protocolo import recv_frame, send_frame
 
-# Variable global para recordar el último texto de presencia impreso
 _ultimo_estado_presencia = None
 
 
@@ -35,7 +34,6 @@ def receiver(sock: socket.socket) -> None:
                 active_users = sorted([name for name, status in users.items() if status == "activo"])
                 estado_actual = f"[Usuarios activos: {', '.join(active_users)}]"
 
-                # Solo imprime si la lista de usuarios cambió respecto al último mensaje recibido
                 if estado_actual != _ultimo_estado_presencia:
                     _ultimo_estado_presencia = estado_actual
                     print(f"\n{estado_actual}")
